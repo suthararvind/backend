@@ -8,6 +8,8 @@ import passport from "passport";
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 import cors from "cors";
 
+app.set("trust proxy", 1);
+
 const app = express();
 export default app;
 dotenv.config({
