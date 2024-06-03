@@ -12,11 +12,15 @@ export const myProfile = (req, res, next) => {
 export const logout = (req, res, next) => {
   req.session.destroy((err) => {
     if (err) return next(err);
+<<<<<<< HEAD
     res.clearCookie("connect.sid", {
       secure:true,
       httpOnly:true,
       sameSite:"none",
     });
+=======
+    res.clearCookie("connect.sid");
+>>>>>>> origin
     res.status(200).json({
       message: "Logged Out",
     });
