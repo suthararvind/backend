@@ -13,12 +13,13 @@ import passport from "passport";
  router.get(
    "/googlelogin",passport.authenticate("google", {
      scope: ["profile"],
+    successRedirect: process.env.FRONTEND_URL,
   })
  );
  router.get( 
    "/login",
    passport.authenticate("google", {
-    //scope: ["profile"],
+    scope: ["profile"],
     successRedirect: process.env.FRONTEND_URL,
    })
   );
