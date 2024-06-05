@@ -18,9 +18,7 @@ export const logout = (req, res, next) => {
       httpOnly:true,
       sameSite:"none",
     });
-=======
     res.clearCookie("connect.sid");
->>>>>>> origin
     res.status(200).json({
       message: "Logged Out",
     });
