@@ -11,7 +11,7 @@ import { authorizeAdmin, isAuthenticated } from "../middlewares/auth.js";
 const router = express.Router();
 
 router.get(
-  "/googlelogin",
+  "/login",
   passport.authenticate("google", {
     scope: ["profile"],
     successRedirect: process.env.FRONTEND_URL,
