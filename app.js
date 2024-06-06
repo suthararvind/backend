@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 app.use(
   cors({
     credentials: true,
-    origin: "https://burgermart.vercel.app/",
+    origin: "https://burgermart.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
