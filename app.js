@@ -37,13 +37,10 @@ app.use(
 
 // CORS middleware
 app.use((req, res, next) => {
-    res.set({
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "*",
-        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
-    });
-
-    next();
+  res.setHeader('Access-Control-Allow-Origin', 'https://burgermart.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
 });
 
 app.use(
