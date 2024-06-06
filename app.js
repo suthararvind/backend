@@ -7,14 +7,11 @@ import passport from "passport";
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 import cors from "cors";
 
+const app = express();
+export default app;
 dotenv.config({
   path: "./config/config.env",
 });
-
-const app = express();
-export default app;
-
-app.set("trust proxy", 1);
 
 // Using Middlewares
 app.use(
@@ -22,10 +19,11 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+
     cookie: {
-      secure: process.env.NODE_ENV === "development" ? false:true,
-      httpOnly: process.env.NODE_ENV === "development" ? false:true,
-      sameSite: process.env.NODE_ENV === "development" ? false:"none",
+      secure: process.env.NODE_ENV === "development" ? false : true,
+      httpOnly: process.env.NODE_ENV === "development" ? false : true,
+      sameSite: process.env.NODE_ENV === "development" ? false : "none",
     },
   })
 );
