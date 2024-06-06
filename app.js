@@ -35,6 +35,17 @@ app.use(
   })
 );
 
+// CORS middleware
+app.use((req, res, next) => {
+    res.set({
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
+    });
+
+    next();
+});
+
 app.use(
   cors({
     credentials: true,
@@ -59,3 +70,4 @@ app.use("/api/v1", orderRoute);
 
 // Using Error Middleware
 app.use(errorMiddleware);
+
